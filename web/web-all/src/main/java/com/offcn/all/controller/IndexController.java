@@ -16,6 +16,7 @@ public class IndexController {
     private ProductFeignClient productFeignClient;
     @GetMapping({"/","index.html"})
     public String index(HttpServletRequest request){
+        System.out.println("-3");
         // 获取首页分类数据
         Result result = productFeignClient.getBaseCategoryList();
         request.setAttribute("list",result.getData());
